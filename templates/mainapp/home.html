@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Portada{% endblock %}
+
+{% load static %}
+<!--Imágen de fondo-->
+{% block background %}{% static 'mainapp/img/consultorio1.png' %}{% endblock %}
+
+<!--Cabecera-->
+{% block headers %}
+    <h1>Ton Federico Dien</h1>
+    <span class="subheading">Odontólogo</span>
+{% endblock %}
+
+<!--Contenido-->
+{% block content %}
+
+    <!-- Proyecto -->
+    <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{% static 'mainapp/img/estetica2.png'%}" alt="">
+        </div>
+      <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">Estética Dental</h2>   
+        <p>Limpieza profunda profesional</p>
+        <p>Tratamientos con microabrasión del esmalte.</p>
+        <p>Contorneado estético.</p>
+        <p>Blanqueamiento dental.</p>
+        <p><a href="http://google.com">Más información</a></p>
+        </div>
+    </div>
+    
+    <!-- Proyecto -->
+    <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{% static 'mainapp/img/implante3.png'%}" alt="">
+        </div>
+        <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">Implantes</h2>   
+        <p>Un implante dental es un dispositivo que consiste en una raíz artificial de titanio para sostener un sólo diente o varios. Son colocados a través de una intervención quirúrgica realizada en el hueso y, eventualmente, se unirán con el mismo mediante un proceso de osteointegración. Sobre el implante dental se "inserta" una prótesis dental fija como una corona o un puente.</p>
+        <p><a href="http://google.com">Más información</a></p>
+        </div>
+    </div>
+    
+    <!-- Proyecto -->
+    <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+          <img class="img-fluid" src="{% static 'mainapp/img/imagen2.png'%}" alt="">
+        </div>
+        <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">Ortodoncia</h2>   
+            <p>Te invitamos a conocer los distintos tratamientos que ofrecemos:</p>
+            <p><b>Técnica Damon.</b> Ortodoncia fija en sólo 8 meses.</p>
+            <p><b>Brackets estéticos.</b> De cerámica o zafiro, que se mimetizan con el color del diente.</p>
+            <p><b>Alineadores removibles.</b> Más costosos. La alternativa transparente y cómoda a los brackets.</p>
+            <p><b>Brackets metálicos.</b> Más económicos y con un toque personal.</p>
+            <p><a href="http://google.com">Más información</a></p>
+        </div>
+    </div>
+
+{% endblock %}

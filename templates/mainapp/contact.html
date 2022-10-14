@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacto{% endblock %}
+
+{% load static %}
+<!--Imágen de fondo-->
+{% block background %}{% static 'mainapp/img/contacto.png' %}{% endblock %}
+
+<!--Cabecera-->
+{% block headers %}
+    <h1>Contacto</h1>
+    <span class="subheading">Teléfono y horarios</span>
+{% endblock %}
+
+<!--Contenido-->
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <p></p>
+      <br>
+      <p><b>Teléfono:</b> +54 3777 777 5555</p>
+      <p><b>Horarios:</b> Lunes a Viernes de 16hs. a 21hs.</p>
+    </div>
+</div>
+{% endblock %}
