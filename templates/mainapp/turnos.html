@@ -14,5 +14,32 @@
 
 <!--Contenido-->
 {% block content %}
-
+    <div class= "row">
+        <div class="col">
+            <h3>{{mes_turno}}</h3>
+            <table class="table">
+                <tr>
+                    <th>Horarios</th>
+                    <th>Lunes {{fechas.0}}</th>
+                    <th>Martes {{fechas.1}}</th>
+                    <th>Miércoles {{fechas.2}}</th>
+                    <th>Jueves {{fechas.3}}</th>
+                    <th>Viernes {{fechas.4}}</th>
+                </tr>
+                {% for hora in horarios %}
+                <tr>
+                    <td>{{hora}}</td>
+                    {% for dia in dias %}
+                        {% if turno.estado == null %}
+                            <td style="background-color: green;">{{turno.estado}}</td>
+                        {% else %}
+                            <td style="background-color: red;">{{turno.estado}}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr> 
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    
 {% endblock %}
