@@ -14,32 +14,75 @@
 
 <!--Contenido-->
 {% block content %}
+
     <div class= "row">
         <div class="col">
-            <h3>{{mes_turno}}</h3>
-            <table class="table">
+            <h3 style="display: inline">{{mes_turno}}</h3>
+            <span style="float: right">
+                <form action="{% url 'atras' %}" style="display: inline">
+                    <button type="submit"><<</button>
+                </form>
+
+                <form action="{% url 'adelante' %}" style="display: inline">
+                    <button type="submit">>></button>
+                </form>
+            </span>
+
+            <table class="table table-condensed table-striped">
                 <tr>
-                    <th>Horarios</th>
-                    <th>Lunes {{fechas.0}}</th>
-                    <th>Martes {{fechas.1}}</th>
-                    <th>Miércoles {{fechas.2}}</th>
-                    <th>Jueves {{fechas.3}}</th>
-                    <th>Viernes {{fechas.4}}</th>
+                    <th class="col-sm-2">Horarios</th>
+                    <th class="col-sm-2">Lunes {{fechas.0}}</th>
+                    <th class="col-sm-2">Martes {{fechas.1}}</th>
+                    <th class="col-sm-2">Miércoles {{fechas.2}}</th>
+                    <th class="col-sm-2">Jueves {{fechas.3}}</th>
+                    <th class="col-sm-2">Viernes {{fechas.4}}</th>
                 </tr>
-                {% for hora in horarios %}
+
+                {% for h in turnos %}
                 <tr>
-                    <td>{{hora}}</td>
-                    {% for dia in dias %}
-                        {% if turno.estado == null %}
-                            <td style="background-color: green;">{{turno.estado}}</td>
+                    {% if forloop.counter == 1 %}
+                        <td>{{horarios.0}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 2 %}
+                        <td>{{horarios.1}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 3 %}
+                        <td>{{horarios.2}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 4 %}
+                        <td>{{horarios.3}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 5 %}
+                        <td>{{horarios.4}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 6 %}
+                        <td>{{horarios.5}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 7 %}
+                        <td>{{horarios.6}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 8 %}
+                        <td>{{horarios.7}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 9 %}
+                        <td>{{horarios.8}}</td>
+                    {% endif %}
+                    {% if forloop.counter == 10 %}
+                        <td>{{horarios.9}}</td>
+                    {% endif %}                                          
+                    {% for fecha in h %}
+
+                        {% if fecha == '1' %}
+                            <td style="background-color: red;"></td>
                         {% else %}
-                            <td style="background-color: red;">{{turno.estado}}</td>
+                            <td style="background-color: green; border-style: solid;"></td>
                         {% endif %}
+
                     {% endfor %}
                 </tr> 
                 {% endfor %}
             </table>
         </div>
     </div>
-    
+
 {% endblock %}
