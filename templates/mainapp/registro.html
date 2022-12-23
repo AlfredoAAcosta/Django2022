@@ -8,12 +8,26 @@
 
 <!--Cabecera-->
 {% block headers %}
-    <h1>Ton Federico Dien</h1>
-    <span class="subheading">Odontólogo</span>
+    <h3>Registro y Nuevos Pacientes</h3>
+    <span class="subheading"></span>
 {% endblock %}
 
 <!--Contenido-->
 {% block content %}
+<span style="float: right">
+    <form action="{% url 'registrarse' %}" style="display: inline">
+        <button type="submit">Registrate como usuario</button>
+    </form>
+
+    <form action="{% url 'login' %}" style="display: inline">
+        <button type="submit">Ya estas registrado</button>
+    </form>
+</span>
+{% if perms.mainapp %}
+<p>Hola {{user.username}}</p>
+<h4>Ingreso de un nuevo Paciente</h4>
+<form action="{% url 'registro' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
 {% for campo in formulario %}
     <div class="form-group">
         <label for="">{{campo.label}}</label>
@@ -35,4 +49,6 @@
         <a href="javascript:history.back();" class="btn btn-secondary">Cancelar</a>        
     </div>
 </div>
+</form>
+{% endif %}
 {% endblock %}
